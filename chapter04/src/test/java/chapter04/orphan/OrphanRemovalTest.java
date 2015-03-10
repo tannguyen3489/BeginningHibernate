@@ -29,16 +29,18 @@ public class OrphanRemovalTest {
 
 
 
-        session = SessionUtil.getSession();
-        tx = session.beginTransaction();
 
-        Query query1 = session.createQuery("from Book b where b.id = :bookId");
-        query1.setParameter("bookId", 1l);
-        Book book = (Book) query1.uniqueResult();
-        session.delete(book);
-
-        tx.commit();
-        session.close();
+        // if orphanRemoval == false, we only remove from yourself object
+//        session = SessionUtil.getSession();
+//        tx = session.beginTransaction();
+//
+//        Query query1 = session.createQuery("from Book b where b.id = :bookId");
+//        query1.setParameter("bookId", 1l);
+//        Book book = (Book) query1.uniqueResult();
+//        session.delete(book);
+//
+//        tx.commit();
+//        session.close();
 
 
         session = SessionUtil.getSession();
