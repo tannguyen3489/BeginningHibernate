@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--  Database connection settings  -->
+        <!--<property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>-->
+        <!--<property name="connection.url">jdbc:hsqldb:db3;shutdown=true</property>-->
+        <!--<property name="connection.username">sa</property>-->
+        <!--<property name="connection.password"/>-->
+        <!--<property name="dialect">org.hibernate.dialect.HSQLDialect</property>-->
+
+
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/mydb</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">123456789</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+
+        <!-- set up c3p0 for use -->
+        <property name="c3p0.max_size">10</property>
+        <!--  Echo all executed SQL to stdout  -->
+        <property name="show_sql">true</property>
+        <!--  Drop and re-create the database schema on startup  -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!--&lt;!&ndash;  Database connection settings  &ndash;&gt;-->
+        <!--<property name="connection.driver_class">org.postgresql.Driver</property>-->
+        <!--<property name="connection.url">jdbc:postgresql://localhost:5432/mydb</property>-->
+        <!--<property name="connection.username">postgres</property>-->
+        <!--<property name="connection.password">123456789</property>-->
+        <!--<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
+        <!--&lt;!&ndash;  Echo all executed SQL to stdout  &ndash;&gt;-->
+        <!--<property name="show_sql">true</property>-->
+        <!--&lt;!&ndash;  Drop and re-create the database schema on startup  &ndash;&gt;-->
+        <!--<property name="hbm2ddl.auto">create-drop</property>-->
+
+
+
+        <mapping class="chapter03.hibernate.Person"/>
+        <mapping class="chapter03.hibernate.Ranking"/>
+        <mapping class="chapter03.hibernate.Skill"/>
+    </session-factory>
+</hibernate-configuration>
